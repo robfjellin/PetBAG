@@ -1,11 +1,22 @@
+import java.util.Arrays;
+
 public class Cat extends Pet {
-        
+		
+		public static boolean[] catSpaceAvailable = new boolean[11];
+		
+		// Initialize all cat spaces as available
+		static {
+			Arrays.fill(catSpaceAvailable, true);
+		}
+
+	
         private int catSpaceNumber;
         
-        public Cat(String petName, int petAge, int catSpaces, int daysStay, double amountDue, int catSpaceNumber) {
+        public Cat(String petName, int petAge, int daysStay, int catSpaceNumber) {
             setPetName(petName);
             setPetAge(petAge);
-            setDaysStay(daysStay);      	
+            setDaysStay(daysStay);     
+            this.catSpaceNumber = catSpaceNumber;
         }
         
         public void setCatSpaceNumber(int spaceNumber) {
@@ -14,5 +25,9 @@ public class Cat extends Pet {
         
         public int getCatSpaceNumber() {
             return catSpaceNumber;
+        }
+        
+        public String toString() {
+        	return "Station #: " + getCatSpaceNumber(); 
         }
     }

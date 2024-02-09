@@ -1,6 +1,11 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Driver {
+	
+	private static ArrayList<Cat> catList = new ArrayList<Cat>();
+	private static boolean[] catSpaceAvailable = Cat.catSpaceAvailable;
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -69,8 +74,27 @@ public class Driver {
 		System.out.println("How many days will " + name + " be boarding with us?");
 		int daysStay = scanner.nextInt();
 		scanner.nextLine();
+		System.out.println(age + " " + daysStay + " " + Arrays.toString(catSpaceAvailable));
 		
+		int catSpaceNumber = 0;
+		boolean foundAvailable = false;
 		
+		for(int i = 0; i < catSpaceAvailable.length; i++) {
+			if (catSpaceAvailable[i]) {
+				catSpaceNumber = i + 1;
+				catSpaceAvailable[i] = false;
+				foundAvailable = true;
+				break;
+			}
+		}
+		
+		if (foundAvailable) {
+		Cat newCat = new Cat(name, age, daysStay, catSpaceNumber);
+		catList.add(newCat);
+		System.out.println(newCat);
+		} else {
+			System.out.println("No available cat spaces.");
+		}
 		
 		System.out.println("Press Enter to return to the menu.");
 		scanner.nextLine();
