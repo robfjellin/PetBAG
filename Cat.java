@@ -5,10 +5,7 @@ public class Cat extends Pet {
         public Cat(String petName, int petAge, int catSpaces, int daysStay, double amountDue, int catSpaceNumber) {
             setPetName(petName);
             setPetAge(petAge);
-            setCatSpaces(catSpaces);
-            setDaysStay(daysStay);
-            setAmountDue(amountDue);      	
-          	this.catSpaceNumber = catSpaceNumber;
+            setDaysStay(daysStay);      	
         }
         
         public void setCatSpaceNumber(int spaceNumber) {
