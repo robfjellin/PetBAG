@@ -73,6 +73,7 @@ public class Driver {
 		scanner.nextLine();
 		System.out.println("How many days will " + name + " be boarding with us?");
 		int daysStay = scanner.nextInt();
+		double amountDue = daysStay * 18.95;
 		scanner.nextLine();
 		System.out.println(age + " " + daysStay + " " + Arrays.toString(catSpaceAvailable));
 		
@@ -89,7 +90,7 @@ public class Driver {
 		}
 		
 		if (foundAvailable) {
-		Cat newCat = new Cat(name, age, daysStay, catSpaceNumber);
+		Cat newCat = new Cat(name, age, daysStay, catSpaceNumber, amountDue);
 		catList.add(newCat);
 		System.out.println(newCat);
 		} else {

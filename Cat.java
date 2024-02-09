@@ -12,11 +12,12 @@ public class Cat extends Pet {
 	
         private int catSpaceNumber;
         
-        public Cat(String petName, int petAge, int daysStay, int catSpaceNumber) {
+        public Cat(String petName, int petAge, int daysStay, int catSpaceNumber, double amountDue) {
             setPetName(petName);
             setPetAge(petAge);
             setDaysStay(daysStay);     
             this.catSpaceNumber = catSpaceNumber;
+            setAmountDue(amountDue);
         }
         
         public void setCatSpaceNumber(int spaceNumber) {
@@ -28,6 +29,7 @@ public class Cat extends Pet {
         }
         
         public String toString() {
-        	return "Station #: " + getCatSpaceNumber(); 
+        	return "Station #: " + getCatSpaceNumber() + 
+        	"\nAmount due: $" + getAmountDue();
         }
     }
